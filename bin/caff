@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+command = ARGV.shift
+
+unless %w{on off}.include? command
+  puts 'usage: caff [on|off]'
+  exit 0
+end
+
+`osascript -e 'tell application \"Caffeine\" to turn #{command}'`
